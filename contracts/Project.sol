@@ -35,7 +35,6 @@ contract RealWorldAssetAuction {
         uint256 amount
     );
 
-    // ✅ Auction create karna
     function createAuction(
         string memory _assetName,
         uint256 _assetId,
@@ -61,7 +60,6 @@ contract RealWorldAssetAuction {
         emit AuctionCreated(auctionCount, _assetName, _minBid, endTime);
     }
 
-    // ✅ Bid lagana
     function placeBid(uint256 _auctionId) external payable {
         Auction storage auction = auctions[_auctionId];
 
@@ -80,7 +78,6 @@ contract RealWorldAssetAuction {
         emit BidPlaced(_auctionId, msg.sender, msg.value);
     }
 
-    // ✅ Auction end karna
     function endAuction(uint256 _auctionId) external {
         Auction storage auction = auctions[_auctionId];
         require(block.timestamp >= auction.endTime, "Auction not ended yet");
@@ -96,7 +93,6 @@ contract RealWorldAssetAuction {
         emit AuctionEnded(_auctionId, auction.highestBidder, auction.highestBid);
     }
 
-    // ✅ Auction details dekhna
     function getAuction(uint256 _auctionId)
         external
         view
@@ -105,3 +101,4 @@ contract RealWorldAssetAuction {
         return auctions[_auctionId];
     }
 }
+
