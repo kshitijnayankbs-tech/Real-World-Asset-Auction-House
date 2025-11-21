@@ -1,10 +1,5 @@
 // scripts/deployAuction.js
 
-/**
- * Hardhat deployment script for RealWorldAssetAuction.sol
- * * Usage: npx hardhat run scripts/deployAuction.js --network <network-name>
- */
-
 const { ethers } = require("hardhat");
 
 async function main() {
@@ -60,3 +55,4 @@ main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
 });
+
